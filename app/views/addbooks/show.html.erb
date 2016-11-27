@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>TYTUŁ:</strong>
+  <%= @addbook.tytul %>
+</p>
+<p>
+  <strong>AUTOR:</strong>
+  <%= @addbook.autor %>
+</p>
+
+<p>
+  <strong>ROK WYDANIA:</strong>
+  <%= @addbook.rok %>
+</p>
+<p>
+  <strong>OPIS:</strong>
+  <%= @addbook.opis %>
+</p>
+<p>
+  <%= link_to 'Edytuj', edit_addbook_path(@addbook, :class => 'btn btn-default') %>
+  <%= link_to 'Powrót', addbooks_path, :class => 'btn btn-default' %>
+</p>
+
+

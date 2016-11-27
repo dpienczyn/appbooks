@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+
+<center><%= image_tag("ss.png") %></center>
+<br>
+<%= link_to 'DODAJ', new_addbook_path, :class => 'btn btn-default'%>
+<table>
+  <thead>
+    <tr>
+      
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <div class="table-responsive">
+<table class="table table-hover">
+<thead>
+      <tr>
+        <th>TYTUŁ</th>
+        <th>OPIS</th>
+        <th>AUTOR</th>
+        <th>ROK</th>
+      </tr>
+    </thead>
+  <tbody>
+    <% @addbooks.each do |addbook| %>
+    
+      <tr>
+        <td><%= addbook.tytul %></td>
+        <td><%= addbook.opis %></td>
+        <td><%= addbook.autor %></td>
+        <td><%= addbook.rok %></td>
+        <p>
+        <td><%= link_to 'Wyswietl', addbook, :class => 'btn btn-default btn-xs' %></td>
+         <td><%= link_to 'Edytuj', edit_addbook_path(addbook), :class => 'btn btn-default btn-xs' %></td>
+         <td><%= link_to 'Usuń', addbook, method: :delete, data: { confirm: 'Czy napewno chcesz usunąć?' }, :class => 'btn btn-default btn-xs' %></td>
+        </p>
+        
+       
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+

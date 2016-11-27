@@ -1,0 +1,37 @@
+<%= form_for(addbook) do |f| %>
+  <% if addbook.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(addbook.errors.count, "error") %> prohibited this addbook from being saved:</h2>
+
+      <ul>
+      <% addbook.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :opis %>
+    <%= f.text_area :opis %>
+  </div>
+
+  <div class="field">
+    <%= f.label :autor %>
+    <%= f.text_field :autor %>
+  </div>
+
+  <div class="field">
+    <%= f.label :rok %>
+    <%= f.text_field :rok %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tytul %>
+    <%= f.text_field :tytul %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
